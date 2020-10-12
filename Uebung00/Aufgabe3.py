@@ -7,7 +7,6 @@ while not raten == secret:
 
   for i in range(4):
     
-      
     if secret[i] == raten[i]:
       #print( 'Die ' + str(i+1) +'. Ziffer ist korrekt!')
       anzahl = anzahl + 1
@@ -27,5 +26,4 @@ while not raten == secret:
   anzahlf = 0
   anzahl = 0
  
-
 print("Du hast es erratten!")
