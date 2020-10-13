@@ -4,7 +4,8 @@ def isEven(number):
     elif number == -1:
         print("Number is odd")
     else:
-        isEven(number-2)
+        isEven(number - 2)
+
 
 isEven(1988)
-#Nummer darf nicht größer als 1988 sein!
+# Nummer darf nicht größer als 1988 sein!
