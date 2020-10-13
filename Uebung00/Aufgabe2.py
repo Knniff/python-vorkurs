@@ -7,7 +7,7 @@ def addList(input):
         if not a in finalDict:
             finalDict[a] = 1
         else:
-            finalDict[a] = finalDict[a] + 1
+            finalDict[a] += 1
         
 addList(alice)
 addList(bob)
