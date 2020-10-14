@@ -6,7 +6,7 @@ class StadtWetter:
     town = ""
     def __init__(self):
         self.town = input("Geben sie ihre Stadt an:")
-        #self.getwebdata()
+        self.getwebdata()
     def getwebdata(self):
         try:
             r = requests.get(f"https://wttr.in/{self.town}?format=j1")
