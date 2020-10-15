@@ -1,6 +1,7 @@
+# auch mit hilfe vom discord
 def dict_comprehension(text):
     text = text.lower()
-    print({char: text.count(char) for char in text if not char == " "})
+    print({char: text.count(char) for char in set(text) if not char == " "})
 
 
 def with_for(text):

@@ -1,18 +1,20 @@
-def list_comprehension(input):
-    matrix = []
-    for item in input:
-        matrixrow = [letter for letter in item]
-        matrix.append(matrixrow)
+def list_comprehension():
+    matrix = [
+        [1 if row == 2 or column == 2 else 0 for column in range(5)] for row in range(5)
+    ]
     print(matrix)
 
 
 # von Jonas(JoBo12) aus dem Discord
-def smart_comprehension():
-    return [
-        [1 if row == 2 or column == 2 else 0 for column in range(0, 5)]
-        for row in range(0, 5)
-    ]
 
 
-# list_comprehension(["00100", "00100", "11111", "00100", "00100"])
-print(smart_comprehension())
+def with_for():
+    matrix_1 = []
+    for item in range(5):
+        matrix_1.append([])
+        for item2 in range(5):
+            matrix_1[item].append(int(item == 2 or item2 == 2))
+    print(matrix_1)
+
+
+list_comprehension()
