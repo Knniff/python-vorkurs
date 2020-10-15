@@ -6,6 +6,7 @@ def list_comprehension(input):
     print(matrix)
 
 
+# von Jonas(JoBo12) aus dem Discord
 def smart_comprehension():
     return [
         [1 if row == 2 or column == 2 else 0 for column in range(0, 5)]
