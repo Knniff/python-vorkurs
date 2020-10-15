@@ -1,4 +1,4 @@
-def isEven(number):
+def is_even(number):
     if number == 0:
         print("Number is even")
     elif number == -1:
@@ -7,5 +7,5 @@ def isEven(number):
         isEven(number - 2)
 
 
-isEven(1988)
-# Nummer darf nicht größer als 1988 sein!
+is_even(1988)
+# Number cant be larger than 1988 because of recursion limit
