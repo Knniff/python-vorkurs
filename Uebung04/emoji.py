@@ -5,13 +5,16 @@ import time
 class GameOfLife:
     grid = []
     width = 5
+    heigth = 5
 
     def __init__(self):
         self.width = int(input("Width: "))
+        self.heigth = int(input("Heigth: "))
         self.grid = [
-            ["😀" if random.randint(0, 1) else "💀" for row in range(self.width)]
-            for column in range(self.width)
+            ["😀" if random.randint(0, 1) else "💀" for column in range(self.width)]
+            for row in range(self.heigth)
         ]
+        self.print()
 
     def print(self):
         for row in self.grid:
@@ -25,7 +28,7 @@ class GameOfLife:
         print("\n")
 
     def is_alive(self, x, y):
-        if x < 0 or y < 0 or x >= self.width or y >= self.width:
+        if x < 0 or y < 0 or x >= self.heigth or y >= self.width:
             return 0
         if self.grid[x][y] == "😀":
             return 1
@@ -43,8 +46,8 @@ class GameOfLife:
         return living_neighbors
 
     def logic(self):
-        newgrid = [["💀" for row in range(self.width)] for column in range(self.width)]
-        for x in range(self.width):
+        newgrid = [["💀" for column in range(self.width)] for row in range(self.heigth)]
+        for x in range(self.heigth):
             for y in range(self.width):
                 living_neighbors = self.neighbor_count(x, y)
                 if self.is_alive(x, y) == 1:
@@ -60,5 +63,5 @@ class GameOfLife:
 
 game = GameOfLife()
 while True:
-    time.sleep(1)
+    time.sleep(0.5)
     game.logic()
