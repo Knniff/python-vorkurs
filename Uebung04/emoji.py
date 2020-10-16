@@ -36,11 +36,9 @@ class GameOfLife:
         for row_offset in range(-1, 2):
             if row_offset != 0:
                 for column_offset in range(-1, 2):
-                    print(f"{x + row_offset}:{y + column_offset}")
                     living_neighbors += self.is_alive(x + row_offset, y + column_offset)
             else:
                 for column_offset in range(-1, 2, 2):
-                    print(f"{x + row_offset}:{y + column_offset}")
                     living_neighbors += self.is_alive(x + row_offset, y + column_offset)
         return living_neighbors
 

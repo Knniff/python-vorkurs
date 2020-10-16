@@ -5,15 +5,16 @@ class GameOfLife {
     for (let index = 0; index < width; index++) {
       grid[index] = Array(this.width)
         .fill()
-        .map(() => Math.round(Math.random() * 1));
+        .map(() => (Math.round(Math.random()) ? "😀" : "💀"));
     }
     this.grid = grid;
     this.print();
   }
 
   print() {
+    const regex = /,/g;
     this.grid.forEach((row) => {
-      console.log(row);
+      console.log(row.toString().replace(regex, ""));
     });
     console.log();
   }
@@ -22,7 +23,7 @@ class GameOfLife {
     if (x < 0 || y < 0 || x >= this.width || y >= this.width) {
       return 0;
     }
-    if (this.grid[x][y] === 1) {
+    if (this.grid[x][y] === "😀") {
       return 1;
     }
     return 0;
@@ -54,18 +55,18 @@ class GameOfLife {
   logic() {
     var newgrid = new Array(this.width);
     for (let index = 0; index < this.width; index++) {
-      newgrid[index] = Array(this.width).fill(0);
+      newgrid[index] = Array(this.width).fill("💀");
     }
     for (let x = 0; x < this.width; x++) {
       for (let y = 0; y < this.width; y++) {
         const living_neighbors = this.neighbor_count(x, y);
         if (this.is_alive(x, y) === 1) {
           if (living_neighbors === 3 || living_neighbors === 2) {
-            newgrid[x][y] = 1;
+            newgrid[x][y] = "😀";
           }
         } else {
           if (living_neighbors === 3) {
-            newgrid[x][y] = 1;
+            newgrid[x][y] = "😀";
           }
         }
       }
