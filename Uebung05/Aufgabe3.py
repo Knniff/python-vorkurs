@@ -1,4 +1,5 @@
 import time
+import configparser
 
 switcher = {
     1: "eins",
@@ -42,6 +43,9 @@ def print_time():
         print(f"Es ist {switch(hour)}.")
 
 
+config = configparser.ConfigParser()
+conf = config.read("/home/knniff/python-projects/python-vorkurs/Uebung05/conf.ini")
+time_intervall = int(config["Time"]["time"])
 while True:
     print_time()
-    time.sleep(1)
+    time.sleep(time_intervall)

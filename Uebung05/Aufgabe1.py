@@ -14,7 +14,7 @@ def workdays(date1, date2):
     delta = date2 - date1
     if delta.days < 0:
         raise Exception
-    for days in range(delta.days):
+    for days in range(delta.days + 1):
         calcdate = date1 + datetime.timedelta(days=days)
         if calcdate.weekday() < 5:
             working_days += 1
