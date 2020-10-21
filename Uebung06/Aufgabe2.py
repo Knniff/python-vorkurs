@@ -6,7 +6,7 @@ def ngrams(size: int, input: str) -> Generator:
     input = re.sub(r"[^a-zA-Z0-9\s]", " ", input)
     input_list = input.split(" ")
 
-    for step in range(len(input_list)):
+    for step in range(len(input_list) - size + 1):
         yield tuple(input_list[step : step + size])
 
 

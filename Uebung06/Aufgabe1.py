@@ -1,7 +1,9 @@
-from typing import NoReturn, Dict, List, Tuple
+from typing import Dict, List, Tuple, Union
 
 
-def flaecheninhalt(breite: float, laenge: float) -> float:
+def flaecheninhalt(
+    breite: Union[float, int], laenge: Union[float, int]
+) -> Union[float, int]:
     return breite * laenge
 
 
