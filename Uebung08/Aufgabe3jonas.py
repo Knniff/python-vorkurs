@@ -32,5 +32,5 @@ def test_time(word):
 
 test_time("palme")
 
-print("Time: ")
+print("Jonas: ")
 print(f"Mean: {np.mean(zeit)}  Min: {np.min(zeit)}   Max: {np.max(zeit)}")

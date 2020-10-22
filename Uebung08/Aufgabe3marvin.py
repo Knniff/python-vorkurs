@@ -43,7 +43,5 @@ for _ in range(50):
     start = time.time()
     print(generate_anagram("ampel"))
     times.append(time.time() - start)
-
-print(f"Durchschnitt: {sum(times) / 50}")
-print(f"Min: {min(times)}")
-print(f"Max: {max(times)}")
+print("Marvin:")
+print(f"Mean: {sum(times) / 50} Min: {min(times)} Max: {max(times)}")

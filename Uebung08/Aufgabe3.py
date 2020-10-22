@@ -36,12 +36,12 @@ def dict_array(array):
     return [make_dict(item) for item in array]
 
 
-for repetition in range(100):
+for repetition in range(50):
     zeit = []
     start = time.time()
     print(get_anagramm("lampe"))
     zeit.append(time.time() - start)
 
 zeit = np.array(zeit)
-print("Time: ")
+print("Finn: ")
 print(f"Mean: {np.mean(zeit)}  Min: {np.min(zeit)}   Max: {np.max(zeit)}")
