@@ -19,7 +19,6 @@ def count_letters(word: str) -> Dict[str, int]:
 
 
 def generate_anagram(startword: str) -> List[str]:
-    start = time.time()
     startword = startword.lower()
     startword_letter_count = coll_count_letters(startword)
 
@@ -29,7 +28,7 @@ def generate_anagram(startword: str) -> List[str]:
         "/home/knniff/python-projects/python-vorkurs/Uebung08/words.txt", "r"
     ) as file:
         all_words = file.readlines()
-        all_words = filter(lambda w: len(w) == len(startword), all_words)
+        # all_words = list(filter(lambda w : len(w) == len(startword), all_words))
         for word in all_words:
             word = word.replace("\n", "")
 
@@ -37,13 +36,14 @@ def generate_anagram(startword: str) -> List[str]:
 
                 anagrams.append(word.replace("\n", ""))
 
-    times.append(time.time() - start)
     return anagrams
 
 
-for _ in range(100):
-    generate_anagram("ampel")
+for _ in range(50):
+    start = time.time()
+    print(generate_anagram("ampel"))
+    times.append(time.time() - start)
 
-print(f"Durchschnitt: {sum(times) / 100}")
+print(f"Durchschnitt: {sum(times) / 50}")
 print(f"Min: {min(times)}")
 print(f"Max: {max(times)}")
