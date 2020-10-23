@@ -17,7 +17,7 @@ switcher = {
 }
 
 
-def switch(input):
+def switch(input: int) -> str:
     if input > 12:
         return switcher[input - 12]
     return switcher[input]

@@ -1,8 +1,8 @@
 class Geburtstag:
-    def print(self, d, m, y):
+    def print(self, d: int, m: int, y: int):
         print(str(d) + "." + str(m) + "." + str(y))
 
-    def nice_print(self, d, m, y):
+    def nice_print(self, d: int, m: int, y: int):
         switcher = {
             1: "January",
             2: "February",

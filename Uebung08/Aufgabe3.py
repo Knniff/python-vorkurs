@@ -1,5 +1,6 @@
 import numpy as np
 import time
+from typing import Dict
 
 
 def load_file():
@@ -7,19 +8,22 @@ def load_file():
         "/home/knniff/python-projects/python-vorkurs/Uebung08/words.txt", "r"
     ) as file:
         all_words = file.readlines()
+
     for word in range(len(all_words)):
-        all_words[word] = all_words[word].replace("\n", "")
+        all_words[word] = all_words[word].replace("\n", "").lower()
     return all_words
 
 
-def get_anagramm(input):
+array = load_file()
+
+
+def get_anagramm(input: str):
     find = []
-    array = load_file()
-    shorter_array = []
-    for item in array:
-        if len(item) == len(input):
-            shorter_array.append(item)
-    dictionary_array = dict_array(shorter_array)
+    input = input.lower()
+    input_len = len(input)
+    dictionary_array = [
+        make_dict(item) for item in [item for item in array if len(item) == input_len]
+    ]
     word_dict = make_dict(input)
     for item in dictionary_array:
         if word_dict == item:
@@ -27,16 +31,11 @@ def get_anagramm(input):
     return find
 
 
-def make_dict(word):
-    word = word.lower()
+def make_dict(word: str) -> Dict[str, int]:
     return {char: word.count(char) for char in word}
 
 
-def dict_array(array):
-    return [make_dict(item) for item in array]
-
-
-for repetition in range(50):
+for repetition in range(500):
     zeit = []
     start = time.time()
     print(get_anagramm("lampe"))

@@ -1,4 +1,4 @@
-def chiffre(input, key, direction):
+def chiffre(input: str, key: int, direction: str) -> str:
     input = input.lower()
     output = ""
     if direction == "encrypt":

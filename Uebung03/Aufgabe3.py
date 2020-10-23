@@ -1,8 +1,9 @@
 import json
 import requests
+from typing import List
 
 
-def get_pastebin(idList):
+def get_pastebin(idList: List[str]):
     textList = []
     for id in idList:
         try:

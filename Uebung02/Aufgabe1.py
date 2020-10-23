@@ -1,6 +1,7 @@
 import csv
 import requests
 from datetime import date
+from typing import Tuple, List
 
 # a)
 def from_web():
@@ -22,7 +23,7 @@ def from_file():
                 csvwriter.writerow(datensatz)
 
 
-def get_data():
+def get_data() -> List:
     with open("data.csv", newline="") as csvdatei:
         csvinhalt = csv.DictReader(csvdatei, delimiter=";")
         csvlist = list(csvinhalt)
@@ -36,7 +37,7 @@ def get_data():
 # b)
 
 
-def acutly_ill(threshhold):
+def acutly_ill(threshhold: int) -> List:
     data = get_data()
     return list(filter(lambda x: int(x["akut_erkrankt"]) > threshhold, data))
 
@@ -44,7 +45,7 @@ def acutly_ill(threshhold):
 # c)
 
 
-def sorted_by_date():
+def sorted_by_date() -> List:
     data = get_data()
     return list(sorted(data, key=lambda row: date.fromisoformat(row["datum"])))
 
@@ -52,7 +53,7 @@ def sorted_by_date():
 # d)
 
 
-def positiveSpike():
+def positiveSpike() -> Tuple[int, int]:
     data = sorted_by_date()
     highest_count = 0
     highest_date = 0

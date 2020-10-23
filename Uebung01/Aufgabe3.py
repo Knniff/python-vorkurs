@@ -1,5 +1,5 @@
-def bubblesort(array):
-    for x in range(len(array)):
+def bubblesort(array: list):
+    for _ in range(len(array)):
         for i in range(len(array) - 1):
             if array[i] > array[i + 1]:
                 b = array[i]

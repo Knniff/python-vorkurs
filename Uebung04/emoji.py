@@ -27,14 +27,14 @@ class GameOfLife:
             )
         print("\n")
 
-    def is_alive(self, x, y):
+    def is_alive(self, x: int, y: int) -> int:
         if x < 0 or y < 0 or x >= self.heigth or y >= self.width:
             return 0
         if self.grid[x][y] == "😀":
             return 1
         return 0
 
-    def neighbor_count(self, x, y):
+    def neighbor_count(self, x: int, y: int) -> int:
         living_neighbors = 0
         for row_offset in range(-1, 2):
             if row_offset != 0:

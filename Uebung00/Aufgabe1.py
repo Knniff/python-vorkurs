@@ -1,9 +1,4 @@
-def simple_calc():
-    firstNumber = input("Enter your first Number: ")
-    operator = input("Enter your Operator(+,-,/,*): ")
-    secondNumber = input("Enter your second Number: ")
-    firstNumber = float(firstNumber)
-    secondNumber = float(secondNumber)
+def simple_calc(firstNumber: float, operator: str, secondNumber: float):
     if operator == "+":
         print(firstNumber + secondNumber)
     elif operator == "-":
@@ -16,4 +11,8 @@ def simple_calc():
         print("Error: Unsupported Operator")
 
 
-simple_calc()
+simple_calc(
+    float(input("Enter your first Number: ")),
+    input("Enter your Operator(+,-,/,*): "),
+    float(input("Enter your second Number: ")),
+)

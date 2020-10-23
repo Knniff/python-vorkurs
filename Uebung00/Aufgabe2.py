@@ -3,7 +3,7 @@ bob = ["Bier", "Bier", "Chips"]
 eve = ["Brot", "Schokolade", "Chips", "Bier", "Wasser"]
 
 
-def add_list(input):
+def add_list(input: list):
     finalDict = {}
     for a in input:
         if not a in finalDict:
