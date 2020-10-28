@@ -5,7 +5,7 @@ from typing import Dict
 
 def load_file():
     with open(
-        "/home/knniff/python-projects/python-vorkurs/Uebung08/words.txt", "r"
+        "/home/knniff/python-projects/python-vorkurs/Uebung08/word_list.txt", "r"
     ) as file:
         all_words = file.readlines()
 
@@ -14,10 +14,8 @@ def load_file():
     return all_words
 
 
-array = load_file()
-
-
 def get_anagramm(input: str):
+    array = load_file()
     find = []
     input = input.lower()
     input_len = len(input)
@@ -35,7 +33,7 @@ def make_dict(word: str) -> Dict[str, int]:
     return {char: word.count(char) for char in word}
 
 
-for repetition in range(500):
+for repetition in range(50):
     zeit = []
     start = time.time()
     print(get_anagramm("lampe"))
